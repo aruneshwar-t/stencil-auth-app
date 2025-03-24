@@ -6,18 +6,19 @@ import { Component, h, State } from '@stencil/core';
   shadow: true,
 })
 export class ProfilePage {
-  @State() userName: string = '';
+  @State() username: string = '';
 
   componentWillLoad() {
     const urlParams = new URLSearchParams(window.location.search);
-    this.userName = urlParams.get('name') || 'User Name';
+    this.username = urlParams.get('username') || 'User';
   }
 
   render() {
     return (
       <div>
-        <h1>Welcome, {this.userName}!</h1>
-        <img src="https://via.placeholder.com/150" alt="User Image" />
+        <h1>Welcome, {this.username}!</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&s"/>
+        <button onClick={() => window.location.href = '/login'}>Exit</button>
       </div>
     );
   }

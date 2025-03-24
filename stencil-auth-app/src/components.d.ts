@@ -5,26 +5,38 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RouterHistory } from "@stencil/router";
-export { RouterHistory } from "@stencil/router";
 export namespace Components {
+    interface AboutPage {
+    }
     interface AppRoot {
     }
+    interface HomePage {
+    }
     interface LoginPage {
-        "history": RouterHistory;
     }
     interface ProfilePage {
     }
     interface SignupPage {
-        "history": RouterHistory;
     }
 }
 declare global {
+    interface HTMLAboutPageElement extends Components.AboutPage, HTMLStencilElement {
+    }
+    var HTMLAboutPageElement: {
+        prototype: HTMLAboutPageElement;
+        new (): HTMLAboutPageElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLHomePageElement extends Components.HomePage, HTMLStencilElement {
+    }
+    var HTMLHomePageElement: {
+        prototype: HTMLHomePageElement;
+        new (): HTMLHomePageElement;
     };
     interface HTMLLoginPageElement extends Components.LoginPage, HTMLStencilElement {
     }
@@ -45,25 +57,31 @@ declare global {
         new (): HTMLSignupPageElement;
     };
     interface HTMLElementTagNameMap {
+        "about-page": HTMLAboutPageElement;
         "app-root": HTMLAppRootElement;
+        "home-page": HTMLHomePageElement;
         "login-page": HTMLLoginPageElement;
         "profile-page": HTMLProfilePageElement;
         "signup-page": HTMLSignupPageElement;
     }
 }
 declare namespace LocalJSX {
+    interface AboutPage {
+    }
     interface AppRoot {
     }
+    interface HomePage {
+    }
     interface LoginPage {
-        "history": RouterHistory;
     }
     interface ProfilePage {
     }
     interface SignupPage {
-        "history": RouterHistory;
     }
     interface IntrinsicElements {
+        "about-page": AboutPage;
         "app-root": AppRoot;
+        "home-page": HomePage;
         "login-page": LoginPage;
         "profile-page": ProfilePage;
         "signup-page": SignupPage;
@@ -73,7 +91,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "about-page": LocalJSX.AboutPage & JSXBase.HTMLAttributes<HTMLAboutPageElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "home-page": LocalJSX.HomePage & JSXBase.HTMLAttributes<HTMLHomePageElement>;
             "login-page": LocalJSX.LoginPage & JSXBase.HTMLAttributes<HTMLLoginPageElement>;
             "profile-page": LocalJSX.ProfilePage & JSXBase.HTMLAttributes<HTMLProfilePageElement>;
             "signup-page": LocalJSX.SignupPage & JSXBase.HTMLAttributes<HTMLSignupPageElement>;
